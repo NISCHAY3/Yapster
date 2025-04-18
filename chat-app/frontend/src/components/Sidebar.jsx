@@ -52,6 +52,9 @@ const Sidebar = () => {
               hover:bg-base-300 transition-colors
               ${selectedUser?._id === user._id ? "bg-base-300 ring-1 ring-base-300" : ""}
             `}
+
+
+                    //try later
                     >
                         <div className="relative mx-auto lg:mx-0">
                             <img
