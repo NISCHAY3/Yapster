@@ -28,8 +28,8 @@ export const getMessages = async (req, res) => {
         const myId = req.user._id;
         const messages = await Message.find({
             $or: [
-                { senderId: myId, reciverid: userToChatId },
-                { senderId: userToChatId, reciverid: myId }
+                { senderId: myId, reciverId: userToChatId },
+                { senderId: userToChatId, reciverId: myId }
             ]
         });
         res.status(200).json(messages);
@@ -65,6 +65,7 @@ export const sendMessage = async (req, res) => {
             reciverId,
             text,
             image: imageUrl,
+            createdAt: new Date()
         });
 
         await newMessage.save();
