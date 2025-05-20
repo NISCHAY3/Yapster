@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 
+//fot db connections
 export const connectDB = async () => {
     try {
         await mongoose.connect(process.env.MONGODB_URI);
